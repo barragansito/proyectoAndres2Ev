@@ -11,7 +11,6 @@ function formatTime(seconds) {
 export function RadioNewVegasPlayer() {
   const {
     track,
-    trackSrc,
     isPlaying,
     currentTime,
     duration,
@@ -41,14 +40,14 @@ export function RadioNewVegasPlayer() {
       <RadioVisualizer />
 
       <div className="radio-controls">
-        <button type="button" className="radio-btn" onClick={previousStation}>
-          Prev
+        <button type="button" className="radio-btn radio-btn-nav" onClick={previousStation}>
+          &lt; Prev
         </button>
-        <button type="button" className="radio-btn" onClick={togglePlay}>
+        <button type="button" className="radio-btn radio-btn-play" onClick={togglePlay}>
           {isPlaying ? 'Pause' : 'Play'}
         </button>
-        <button type="button" className="radio-btn" onClick={nextStation}>
-          Next
+        <button type="button" className="radio-btn radio-btn-nav" onClick={nextStation}>
+          Next &gt;
         </button>
       </div>
 
@@ -81,9 +80,6 @@ export function RadioNewVegasPlayer() {
         onChange={handleVolume}
         className="radio-range"
       />
-      <p className="radio-help">New Vegas: /public/audio/radio-new-vegas/radio-new-vegas-theme.mp3</p>
-      <p className="radio-help">Mojave: /public/audio/radio-mojave/radio-mojave-theme.mp3</p>
-      <p className="radio-help">URL actual: {trackSrc}</p>
       {audioError ? <p className="radio-error">{audioError}</p> : null}
     </article>
   )
