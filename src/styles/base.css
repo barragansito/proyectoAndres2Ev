@@ -11,7 +11,16 @@ body {
   background-color: var(--bg-color);
   color: var(--pip-green);
   font-family: var(--font-main);
+  font-size: 15px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0.035em;
 }
 
 a {

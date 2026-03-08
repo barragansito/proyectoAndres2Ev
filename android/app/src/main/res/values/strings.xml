@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Pip-Boy New Vegas Web</string>
+    <string name="title_activity_main">Pip-Boy New Vegas Web</string>
+    <string name="package_name">com.barragan.newvegasweb</string>
+    <string name="custom_url_scheme">com.barragan.newvegasweb</string>
+</resources>

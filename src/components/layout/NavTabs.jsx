@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
+import { useAuth } from '../../features/auth/hooks/useAuth'
 
-const tabs = [
+const baseTabs = [
   { label: 'STAT', to: '/stat' },
   { label: 'INV', to: '/inv' },
   { label: 'DATA', to: '/data' },
@@ -9,6 +10,9 @@ const tabs = [
 ]
 
 export function NavTabs() {
+  const { isAdmin } = useAuth()
+  const tabs = isAdmin ? [...baseTabs, { label: 'ADMIN', to: '/admin' }] : baseTabs
+
   return (
     <nav className="main-nav">
       <ul>
