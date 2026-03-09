@@ -5,11 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run build:web",
+    "build:web": "vite build --mode web",
+    "build:android": "vite build --mode android",
     "lint": "eslint .",
     "preview": "vite preview",
-    "pwa:build": "vite build",
-    "android:sync": "npm run build && npx cap sync android",
+    "pwa:build": "npm run build:web",
+    "android:sync": "npm run build:android && npx cap sync android",
     "android:open": "npx cap open android"
   },
   "dependencies": {

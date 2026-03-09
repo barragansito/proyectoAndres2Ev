@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { radioPlayerContext as RadioPlayerContext } from './radioPlayerContext'
+import { resolveAssetPath } from '../../../utils/basePath'
 
 const STATIONS = [
   {
@@ -28,7 +29,7 @@ export function RadioPlayerProvider({ children }) {
   const [volume, setVolume] = useState(0.8)
   const [audioError, setAudioError] = useState('')
   const track = STATIONS[currentStationIndex]
-  const trackSrc = `${import.meta.env.BASE_URL}${track.path}`
+  const trackSrc = resolveAssetPath(track.path)
 
   const ensureAudioGraph = () => {
     if (typeof window === 'undefined') return null

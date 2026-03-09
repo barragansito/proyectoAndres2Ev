@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
+import { resolveAssetPath } from '../../../utils/basePath'
 
-const TAB_SOUND_SRC = `${import.meta.env.BASE_URL}audio/ui/tab-change.mp3`
+const TAB_SOUND_SRC = resolveAssetPath('audio/ui/tab-change.mp3')
 
 export function useTabChangeSound(isEnabled) {
   const { pathname } = useLocation()

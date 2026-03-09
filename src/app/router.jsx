@@ -11,6 +11,7 @@ import { StatPage } from '../features/dashboard/pages/StatPage'
 import { AdminRoute } from '../routes/AdminRoute'
 import { ProtectedRoute } from '../routes/ProtectedRoute'
 import { PublicRoute } from '../routes/PublicRoute'
+import { routerBasePath } from '../utils/basePath'
 
 export const router = createBrowserRouter([
   {
@@ -54,7 +55,6 @@ export const router = createBrowserRouter([
     ],
   },
   { path: '*', element: <Navigate to="/stat" replace /> },
-  {
-    basename: import.meta.env.BASE_URL,
-  }
-])
+], {
+  basename: routerBasePath,
+})

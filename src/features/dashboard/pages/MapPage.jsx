@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { resolveAssetPath } from '../../../utils/basePath'
 
-const MAP_SRC = `${import.meta.env.BASE_URL}maps/MojaveMap.webp`
+const MAP_SRC = resolveAssetPath('maps/MojaveMap.webp')
 const MIN_ZOOM = 1
 const MAX_ZOOM = 3
 const ZOOM_STEP = 0.2
